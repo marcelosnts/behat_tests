@@ -4,3 +4,13 @@ default:
       contexts:
         - FormacaoEmMemoria
         - FormacaoNoBanco
+    unit:
+      contexts:
+        - FormacaoEmMemoria
+      filters:
+        tags: unit
+    integration:
+      contexts:
+        - FormacaoNoBanco
+      filters:
+        tags: integration
