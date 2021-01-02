@@ -4,12 +4,15 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Alura\Armazenamento\Infra\EntityManagerCreator;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context
 {
+    private EntityManagerInterface $em;
     /**
      * Initializes context.
      *
@@ -42,7 +45,7 @@ class FeatureContext implements Context
      */
     public function queEstouConectadoAoBancoDeDados()
     {
-        throw new PendingException();
+        $this->em = (new EntityManagerCreator())->getEntityManager();
     }
 
     /**
@@ -57,6 +60,22 @@ class FeatureContext implements Context
      * @Then se eu buscar no banco, devo encontar essa formação
      */
     public function seEuBuscarNoBancoDevoEncontarEssaFormacao()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then eu devo ter uma formação criada com a descrição :arg1
+     */
+    public function euDevoTerUmaFormacaoCriadaComADescricao($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When tento salvar uma nova formação com a descrição :arg1
+     */
+    public function tentoSalvarUmaNovaFormacaoComADescricao($arg1)
     {
         throw new PendingException();
     }
